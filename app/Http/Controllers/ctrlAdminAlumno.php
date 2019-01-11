@@ -3,6 +3,7 @@
 namespace SIDTT\Http\Controllers;
 use \SIDTT\usuarios;
 use \SIDTT\alumno;
+use \SIDTT\unidades;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
@@ -20,8 +21,9 @@ class ctrlAdminAlumno extends Controller
      */
     public function index()
     {   
-        $usuario = usuarios::withTrashed()->where('tipo','=','alumno')->join('alumnos','usuarios.idUsuario','=','alumnos.idUsuario')->select('usuarios.*','alumnos.*')->get();
-        return view('administrador.crud_alumno.index',compact('usuario'));
+        $usuario = usuarios::withTrashed()->where('tipo','=','alumno')->join('alumnos','usuarios.idUsuario','=','alumnos.idUsuario')->select('usuarios.*','alumnos.*','alumnos.Unidad_Aprendizaje_idUnidad_Aprendizaje as idG')->get();
+        $grupo = unidades::all();
+        return view('administrador.crud_alumno.index',compact('usuario','grupo'));
     }
 
     /**

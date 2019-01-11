@@ -60,9 +60,12 @@
     <td title="clave" contenteditable="true">
      {{ $doc->numerodet }}
     </td>
-    <td title="name" contenteditable="true">{{$doc->nombre." ".$doc->aoe_pat." ".$doc->ape_mat}}</td>
-       <td title="academia" contenteditable="true">{{
-        $academia->where('idAcademia','=',$doc->Academia_idAcademia)}}</td>
+    <td title="name" contenteditable="true">{{$doc->nombre." ".$doc->ape_pat." ".$doc->ape_mat}}</td>
+       <td title="academia" contenteditable="true">
+        {{
+       $doc->Academia
+       }}
+     </td>
     <td title="email" contenteditable="true">
       {{ $doc->email}}
     </td>

@@ -66,7 +66,7 @@ Boleta
     <td title="name"contenteditable="true" class="editeable" >{{$us->nombre." ".$us->ape_pat." ".$us->ape_mat}}</td>
    
     <td title="type"contenteditable="true" class="editeable">A</td>
-    <td title="group-ua" contenteditable="true" class="editeable" ></td>
+    <td title="group-ua" contenteditable="true" class="editeable" >{{$grupo->where('idUnidadAprendizaje','=',$us->idG)->get('grupo')}}</td>
     <td title="email" contenteditable="true" class="editeable" >{{$us->email}}</td>
     <td title="pass" contenteditable="true" class="editeable" >x</td>
 
@@ -80,11 +80,11 @@ Boleta
      <td title="actions">
 
    <button type="button" class="btn btn-info">
-    <i id="bval" class=" material-icons" title="Editar" onclick="window.location=''">edit</i>
+    <i id="bval" class=" material-icons" title="Editar" onclick="action();">edit</i>
     </button>
     
       <button type="button" id="delete" class="btn btn-danger">
-        <i id="bdelete" class=" material-icons" title="Eliminar" onclick="window.location='admin.alumnos.destroy'">delete</i>
+        <i id="bdelete" class=" material-icons" title="Eliminar" onclick="">delete</i>
       </button> 
 
     </td>

@@ -13,5 +13,5 @@ class alumno extends Model implements AuthenticatableContract
     protected $connection = 'mysql';
     protected $table = 'alumnos';
     protected $primaryKey = 'idUsuario';
-    protected $fillable = ['boleta','idProyecto'];
+    protected $fillable = ['boleta','idProyecto','Unidad_Aprendizaje_idUnidad_Aprendizaje'];
 }
