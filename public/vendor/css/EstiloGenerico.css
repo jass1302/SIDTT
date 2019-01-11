@@ -1,0 +1,40 @@
+.superior
+{
+	background:#2c3e50;
+	color: #fff;
+	text-align: center; 
+}
+.justificar
+{
+	text-align: left;
+
+}
+.criterio
+{
+	background:#fff;
+	color: #000000;
+	text-align: center; 
+}
+.padre{
+	background:#2c3e50;
+	color: #fff;
+  
+   justify-content: center;
+}
+.dere
+{
+	text-align: right;
+}
+.izqui
+{
+	background:#2c3e50;
+	color: #fff;
+	text-align: left;
+}
+.sangria
+{
+	background:#2c3e50;
+	color: #fff;
+	text-align: left; 
+	text-indent: 40px;
+}

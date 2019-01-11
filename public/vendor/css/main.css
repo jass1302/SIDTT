@@ -1,0 +1,52 @@
+/*
+
+.perfil-layout-leftbar-back{
+
+	width: 18%;
+	height: 109%;
+	position: relative;
+	float: left;
+	
+}
+.perfil-layout-leftbar .in{
+	margin: auto;
+	width: 100%;
+	height: 100%;
+}
+.perfil-layout-content{
+	top:5%;
+right: 30px;
+	width: 80%;
+	height: 95%;
+	float: right;
+	position: relative;
+}
+.perfil-layout-content .login-content-text 
+{
+padding-top: 10px;
+padding-bottom: 10px;
+}
+
+
+.formL{
+	margin: auto;
+	position: relative;
+	width: 80%;
+	height: 80%;
+	top: 10%;
+}
+.formLBack{
+	background-color: gray;
+	opacity: .7;
+	height: 100%;
+	width: 100%;
+}
+.subti{
+	margin: auto;
+	position: absolute;
+	width: 15%;
+	height: 8%;
+	top: 30%;
+	left: 23%;
+}
+*/
