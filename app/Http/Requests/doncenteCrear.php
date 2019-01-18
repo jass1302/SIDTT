@@ -32,10 +32,9 @@ class doncenteCrear extends FormRequest
             'password' => 'min:6|required_with:password_confirmation|same:password_confirmation',
             'password_confirmation' => 'min:6',
             //'cedula' => 'required|min:7|max:7',
-            'numerodet'=> 'required|min:10|max:10',
             'academia' => 'required',
             'email' => "unique:usuarios,email,$this->idUsuario,idUsuario",
-            'numerodet' => "unique:docente,numerodet,$this->idUsuario,idUsuario",
+            'numerodet' => "required|unique:docente,numerodet,$this->idUsuario,idUsuario|min:10|max:10",
             'terms' => 'required'
         ];
     }

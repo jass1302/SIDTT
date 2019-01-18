@@ -36,7 +36,7 @@ class registro extends Controller
         $usuario->tipo = $request->get('type');
         $usuario->nombre = $request->get('nombre');
         $usuario->ape_pat = $request->get('ape_pat');
-        $usuario->ape_mat = $request->get('ape_pat');
+        $usuario->ape_mat = $request->get('ape_mat');
         $usuario->email = $request->get('email');
         $usuario->password = bcrypt($request->get('password'));
         $usuario->save();

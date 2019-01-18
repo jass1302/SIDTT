@@ -13,6 +13,7 @@ class unidades extends Model implements AuthenticatableContract
     protected $table = 'unidad_aprendizaje';
     public $timestamps = true;
     protected $dates = ['fecha_ini,fecha_fin,deleted_at'];
+    protected $primaryKey = 'idUnidad_Aprendizaje';
     protected $fillable = 
     ['unidad','grupo','periodo','d_titular']; //Los proyectos van a guardar el id de la unidad a que pertenezcan
 }

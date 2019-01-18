@@ -3263,6 +3263,8 @@ class ComposerStaticInit5269f2549a5d18081ed40c50612301e5
         'SIDTT\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'SIDTT\\Http\\Controllers\\admin' => __DIR__ . '/../..' . '/app/Http/Controllers/admin.php',
         'SIDTT\\Http\\Controllers\\almProject' => __DIR__ . '/../..' . '/app/Http/Controllers/almProject.php',
+        'SIDTT\\Http\\Controllers\\aseController' => __DIR__ . '/../..' . '/app/Http/Controllers/aseController.php',
+        'SIDTT\\Http\\Controllers\\busquedaController' => __DIR__ . '/../..' . '/app/Http/Controllers/busquedaController.php',
         'SIDTT\\Http\\Controllers\\ctrlAdminAlumno' => __DIR__ . '/../..' . '/app/Http/Controllers/ctrlAdminAlumno.php',
         'SIDTT\\Http\\Controllers\\ctrlAdminAsesor' => __DIR__ . '/../..' . '/app/Http/Controllers/ctrlAdminAsesor.php',
         'SIDTT\\Http\\Controllers\\ctrlAdminDocente' => __DIR__ . '/../..' . '/app/Http/Controllers/ctrlAdminDocente.php',
@@ -3282,6 +3284,8 @@ class ComposerStaticInit5269f2549a5d18081ed40c50612301e5
         'SIDTT\\Http\\Middleware\\admin' => __DIR__ . '/../..' . '/app/Http/Middleware/admin.php',
         'SIDTT\\Http\\Middleware\\al' => __DIR__ . '/../..' . '/app/Http/Middleware/al.php',
         'SIDTT\\Http\\Middleware\\asesor' => __DIR__ . '/../..' . '/app/Http/Middleware/asesor.php',
+        'SIDTT\\Http\\Middleware\\docente' => __DIR__ . '/../..' . '/app/Http/Middleware/docente.php',
+        'SIDTT\\Http\\Middleware\\homepage' => __DIR__ . '/../..' . '/app/Http/Middleware/homepage.php',
         'SIDTT\\Http\\Requests\\alumnoCrear' => __DIR__ . '/../..' . '/app/Http/Requests/alumnoCrear.php',
         'SIDTT\\Http\\Requests\\asesorCrear' => __DIR__ . '/../..' . '/app/Http/Requests/asesorCrear.php',
         'SIDTT\\Http\\Requests\\doncenteCrear' => __DIR__ . '/../..' . '/app/Http/Requests/doncenteCrear.php',
@@ -3301,7 +3305,6 @@ class ComposerStaticInit5269f2549a5d18081ed40c50612301e5
         'SIDTT\\protocolo' => __DIR__ . '/../..' . '/app/protocolo.php',
         'SIDTT\\proyecto' => __DIR__ . '/../..' . '/app/proyecto.php',
         'SIDTT\\titulos' => __DIR__ . '/../..' . '/app/titulos.php',
-        'SIDTT\\uap' => __DIR__ . '/../..' . '/app/uap.php',
         'SIDTT\\unidades' => __DIR__ . '/../..' . '/app/unidades.php',
         'SIDTT\\usuarios' => __DIR__ . '/../..' . '/app/usuarios.php',
         'Sabberworm\\CSS\\CSSList\\AtRuleBlockList' => __DIR__ . '/..' . '/sabberworm/php-css-parser/lib/Sabberworm/CSS/CSSList/AtRuleBlockList.php',
@@ -4075,6 +4078,7 @@ class ComposerStaticInit5269f2549a5d18081ed40c50612301e5
         'Whoops\\Util\\SystemFacade' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Util/SystemFacade.php',
         'Whoops\\Util\\TemplateHelper' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Util/TemplateHelper.php',
         'XdgBaseDir\\Xdg' => __DIR__ . '/..' . '/dnoegel/php-xdg-base-dir/src/Xdg.php',
+        'alumno' => __DIR__ . '/../..' . '/database/seeds/alumno.php',
         'phpDocumentor\\Reflection\\DocBlock' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlock.php',
         'phpDocumentor\\Reflection\\DocBlockFactory' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlockFactory.php',
         'phpDocumentor\\Reflection\\DocBlockFactoryInterface' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlockFactoryInterface.php',
@@ -4143,6 +4147,7 @@ class ComposerStaticInit5269f2549a5d18081ed40c50612301e5
         'phpDocumentor\\Reflection\\Types\\String_' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Types/String_.php',
         'phpDocumentor\\Reflection\\Types\\This' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Types/This.php',
         'phpDocumentor\\Reflection\\Types\\Void_' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Types/Void_.php',
+        'usuario' => __DIR__ . '/../..' . '/database/seeds/usuario.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

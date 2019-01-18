@@ -22,9 +22,11 @@ class ctrlAdminUnidades extends Controller
      */
     public function index()
     {
-        $uni = unidades::withTrashed()->get();
+       $uni = unidades::withTrashed()->paginate(6);
+      $unid[0] = "Trabajo Terminal I";
+      $unid[1] = "Trabajo Terminal II";
         $docentes = usuarios::select(DB::raw("CONCAT(nombre,' ',ape_pat,' ',ape_mat) AS nombre"),'idUsuario','tipo')->where('tipo','=','docente')->orderBy('nombre')->pluck('nombre','idUsuario');
-       return view('administrador.crud_unidades.index',compact('uni','docentes'));
+       return view('administrador.crud_unidades.index',compact('uni','docentes','unid'));
     }
     /**
      * Show the form for creating a new resource.
@@ -45,14 +47,12 @@ class ctrlAdminUnidades extends Controller
      */
     public function store(Request $request)
     {
-        unidades::create([
-            'unidad' => $request['unidad'],
-            'd_titular' => $request['d_titular'],
-            'grupo' => $request['grupo'],
-            'periodo' => $request['periodo']
-        ]);
-        Session::flash('message','Unidad agregada correctamente.');
-        return Redirect::to('administrador/unidades');
+        if($request->ajax()){
+            return response()->json(
+                [
+                    "mensaje" => $request->all()
+                ]);
+        }
     }
 
     /**
@@ -89,15 +89,21 @@ class ctrlAdminUnidades extends Controller
      */
     public function update(Request $request, $id)
     {
-        unidades::find($id)->update([
-            'unidad' => $request['unidad'],
-            'd_titular' => $request['d_titular'],
-            'grupo' => $request['grupo'],
-            'periodo' => $request['periodo']
-        ]);
+        if($request->ajax()){
+            $unidad = unidades::find($id);
+            $unidad->tipo = $request->get('uap');
+            $unidad->grupo = $request->get('grupo');
+            $unidad->periodo = $request->get('periodo');
+            $unidad->fecha_ini = $request->get('inicio');
+            $unidad->fecha_fin = $request->get('fin');
+            $unidad->dtitular = $request->get('docente');
+            $unidad->save();
+            return response()->json(
+                [
+                    "mensaje" => $request->all()
+                ]);
+        }
 
-        Session::flash('message','Unidad actualizada correctamente.');
-        return Redirect::to('administrador/unidades');
     }
 
     /**
@@ -108,8 +114,18 @@ class ctrlAdminUnidades extends Controller
      */
     public function destroy($id)
     {
-        unidades::find($id)->delete();
-        Session::flash('message','La unidad ha sido deshabilitada.');
-        return Redirect::to('administrador/unidades');
+        $temp = unidades::withTrashed()->find($id);
+        if($temp->deleted_at == null){
+            
+            unidades::find($id)->delete();
+            Session::flash('message','La unidad ha sido deshabilitada.');
+            return Redirect::to('administrador/unidades');
+
+        }else{
+
+            unidades::withTrashed()->find($id)->restore();
+            Session::flash('message','La unidad ha sido habilitada.');
+            return Redirect::to('administrador/unidades');
+        }
     }
 }

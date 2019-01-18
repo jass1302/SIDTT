@@ -79,7 +79,8 @@
    <button type="button" class="btn btn-info">
                           <i id="bval" class=" material-icons" title="Editar" onclick="action();">edit</i>
                           </button>
-                            <button type="button" id="delete" class="btn btn-danger">
+
+                            <button type="button" id="delete" class="btn btn-danger" href="{{ route('principal') }}">
                           <i id="bdelete" class=" material-icons" title="Eliminar" onclick="">delete</i>
                           </button>  
     </td>

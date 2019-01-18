@@ -5,7 +5,6 @@
 <head>
 	<title>SIDTT - Iniciar Sesión</title>
 </head>
-
  	@include('alerts.errors')
 	<div class="wrapped">
 <div class="contlogin">

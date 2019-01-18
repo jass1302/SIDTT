@@ -82,6 +82,10 @@ justify-content: center;
 align-items: center;
 height: 100%;
 }
+#addBtn
+{
+
+}
 
 /*
 .btn{
@@ -92,7 +96,6 @@ font-size:18px;
 width: 70%;
 color:#fff;
 }
-
 .btns{
 position: relative;
 background: #00CCCC;
@@ -104,7 +107,6 @@ opacity: none;
 width: 70%;
 color:#fff;
 }
-
 .btnf{
 align-content: center;
 text-align: center;
@@ -118,7 +120,6 @@ width: 10%;
 color:#fff;
 right: 0px;
 bottom: -70px;
-
 }*/
 
 /*------------------------C-----------------------------*/
@@ -206,7 +207,6 @@ border-bottom: 1px solid white;
   width: 100%;
   height:80%;
 }
-
 #docsleft
 {
 position: absolute;
@@ -239,7 +239,6 @@ height:100px;
 {
   width: 50%;
   position: relative;
-
   top: 20px;
 }
 */
@@ -286,11 +285,6 @@ color: #641C34;
 left: 50px;
 top: 10px;
 }
-.fixed_headers {
-  width: 100%;
-  table-layout:auto;
-border-collapse: collapse;
-}
 
 .fixed_headers th,
 .fixed_headers td {
@@ -300,88 +294,76 @@ border-collapse: collapse;
 .fixed_headers th{
   text-align: center;
 }
-.fixed_headers td[title~=clave],
-.fixed_headers th[title~=clave] {
+.fixed_headers td[name~=clave],
+.fixed_headers th[name~=clave] {
   min-width: 100px;
    max-width: 100px;
      text-align: center;
 }
-.fixed_headers td[title~=name],
-.fixed_headers th[title~=name] {
+.fixed_headers td[name~=name],
+.fixed_headers th[name~=name] {
   min-width: 250px;
   max-width: 250px;
 }
-.fixed_headers td[title~=academia],
-.fixed_headers th[title~=academia] {
+.fixed_headers td[name~=academia],
+.fixed_headers th[name~=academia] {
   min-width: 250px;
   max-width: 250px;
 }
 
-.fixed_headers td[title~=type],
-.fixed_headers th[title~=type],
-.fixed_headers td[title~=group],
-.fixed_headers th[title~=group] ,
-.fixed_headers td[title~=periodo],
-.fixed_headers th[title~=periodo] {
+.fixed_headers td[name~=type],
+.fixed_headers th[name=type],
+.fixed_headers td[name~=group],
+.fixed_headers th[name~=group] ,
+.fixed_headers td[name~=periodo],
+.fixed_headers th[name~=periodo] {
   min-width: 20px;
   min-width: 80px;
   text-align: center;
 }
-.fixed_headers td[title~=group-ua],
-.fixed_headers th[title~=group-ua] {
+.fixed_headers td[name~=group-ua],
+.fixed_headers th[name~=group-ua] {
     min-width: 220px;
 
 }
-.fixed_headers td[title~=email],
-.fixed_headers th[title~=email] {
+.fixed_headers td[name~=email],
+.fixed_headers th[name~=email] {
     max-width: 250px;
     min-width: 250px;
 
 }
-.fixed_headers td[title~=date],
-.fixed_headers th[title~=date] {
+.fixed_headers td[name~=date],
+.fixed_headers th[name~=date] {
     max-width: 190px;
     min-width: 190px;
 }
-.fixed_headers td[title~=state],
-.fixed_headers th[title~=state]
+.fixed_headers td[name~=state],
+.fixed_headers th[name~=state]
 {
     max-width: 150px;
     min-width: 150px;
     text-align: center;
 }
-.fixed_headers td[title~=pass],
-.fixed_headers th[title~=pass]
+.fixed_headers td[name~=pass],
+.fixed_headers th[name~=pass]
 {
     max-width: 100px;
     min-width: 100px;
       text-align: center;
 }
- td[title~=actions],
- th[title~=actions]
+.fixed_headers td[name~=actions],
+.fixed_headers th[name~=actions]
 {
     max-width: 200px;
     min-width: 200px;
           text-align: center;
 }
-.fixed_headers td[title~=ua],
-.fixed_headers th[title~=ua]
+.fixed_headers td[name~=ua],
+.fixed_headers th[name~=ua]
 {
     max-width: 150px;
     min-width: 150px;
 
-}
-
-
-.fixed_headers thead tr {
-  display: block;
-  position: relative;
-}
-.fixed_headers tbody{
-  display: block;
-  overflow: auto;
-  width: 100%;
-  height: 400px;
 }
 
 /*
@@ -424,6 +406,10 @@ h5{
 }
 /*------------------------I-----------------------------*/
 i{color:white;}
+
+#curriculum:disabled{
+visibility: hidden;
+}
 /*------------------------J-----------------------------*/
 /*------------------------K-----------------------------*/
 /*------------------------L-----------------------------*/
@@ -431,7 +417,6 @@ i{color:white;}
 {
   color:#000;
 }
-
 .logOut
 {
   text-align: center;
@@ -547,7 +532,6 @@ top: 0;
 }
 #proyecto_x
 {
-
 max-height: 370px;
 overflow-y: scroll;
 }*/
@@ -615,6 +599,24 @@ a[data-toggle="collapse"] {
     top: 50%;
     right: 20px;
     transform: translateY(-50%);
+}
+
+
+ select:disabled,input:disabled {
+   appearance: none;
+   background-color: transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none; 
+    border: none;
+     color: #000;
+}
+button[name="curriculum"]::disabled
+{
+  visibility: hidden;
+}
+input[name="clave"],input[name="periodo"]
+{
+  width: 100px;
 }
 /*------------------------T-----------------------------*/
 .title{
@@ -701,5 +703,3 @@ top:0;
 /*------------------------X-----------------------------*/
 /*------------------------Y-----------------------------*/
 /*------------------------Z-----------------------------*/
-
- 

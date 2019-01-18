@@ -100,8 +100,8 @@ class ctrlAdminDocente extends Controller
         usuarios::find($id)->update([
             'nombre' => $request['nombre'], 
             'ape_pat' => $request['ape_pat'],
-            'ape_mat' => $request['ape_pat'],]
-        );
+            'ape_mat' => $request['ape_pat'],
+        ]);
         $user = usuarios::find($id);
         $user->email = $request->get('email');
         $user->password = bcrypt($request->get('password'));
