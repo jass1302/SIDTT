@@ -1,11 +1,14 @@
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 @if(count($errors)>0)
-<div class="alert alert-danger alert-dismissible" role="alert">
-	<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-		<span aria-hidden="true">&times;</span></button>
-		<ul>
+<div>
+<script>
+			
+			toastr.options.progressBar=true;
 			@foreach($errors->all() as $error)
-			<li>{!!$error!!}</li>
+			toastr.error("{!!$error!!}"); 
 			@endforeach
-		</ul>
+</script>	
 </div>
 @endif
