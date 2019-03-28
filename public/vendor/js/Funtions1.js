@@ -1,102 +1,5 @@
-@extends('layouts.perfiles')
-<title>Administrador - Docente</title>
-@section('contenido-perfil')
 
-@if(Session::has('message'))
-  <div class="alert alert-warning alert-dismissible" role="alert">
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
-      {{Session::get('message')}}
-  </div>
-  @endif
-
-<input id="PageN" type="hidden" name="Docentes">
-
-<div class="title-l"> 
-  <h7>Docentes</h7>
-</div>
-
-<div class="wrapped">
-  <button id="addBtn" class="btn  material-icons" type="button" name="add" >add</button>
- <table class="table table-hover fixed_headers">
-<thead>
-<tr>
-   <th   name="clave" >
-         {!!Form::label('No. Trabajador')!!}
-</th>
-      <th  name="name">
-        {!!Form::label('Docente')!!} 
-      </th>
-     <th  name="academia">
-        {!!Form::label('Academia')!!} 
-      </th> 
-      
-
-<th   name="email">
-  {!!Form::label('Correo')!!}
- 
-<th   name="pass">
-  {!!Form::label('Contaseña')!!}
-  
-</th>
-<th  name="state">
-         {!!Form::label('Estado')!!}
-  </th>
-<th  name="actions">
- {!!Form::label('Acciones')!!}
-  </th>
-</tr>
-<tr id="new">
-   <td name="clave">
-    {!!Form::text('clave')!!}
-    </td>
-    <td name="name" >{!!Form::text('name')!!}</td>
-    <td name="academia" >{!!Form::text('academia')!!}</td>
-    <td name="email" >{!!Form::email('email')!!} </td>
-    <td name="pass" >{!!Form::text('pass')!!}</td>
-    <td name="state" > </td>
-    <td  name="actions" >
-       {{ FORM::button('<i  name="bedit" class=" material-icons Btn1" name="Guardar" >save</i>',['class'=>'btn btn-info Btn1','type'=>'button','id'=>'crear']) }}
-       {{ FORM::button('<i  name="bdelete" class=" material-icons Btn2" name="Cancelar" >close</i>',['class'=>'btn btn-danger Btn2','type'=>'button','id' => 'delete']) }}
-    </td>
-  </tr>
-
-</thead>
-<tbody >
-    @foreach($usuario as $doc)
-
-  <tr id="{{$doc->idUsuario}}">
-    <td name="clave" contenteditable="false">
-    {!!Form::text('clave',$doc->numerodet)!!}
-    </td>
-    <td name="name" >{!!Form::text('name',$doc->nombre." ".$doc->aoe_pat." ".$doc->ape_mat)!!}</td>
-       <td name="academia">{!!Form::text('academia',$doc->Academia)!!}</td>
-    <td name="email" >
-      {!!Form::email('email', $doc->email)!!}
-    </td>
-    <td name="pass" >
-      {!!Form::password('pass')!!}
-    </td>
-    <td name="state" >
-      @if($doc->deleted_at == null)
-  <label>Activo</label>
-  @else
-  <label>Inactivo</label>
-  @endif
-    </td>
-    <td  name="actions" >
-       {{ FORM::button('<i  name="bedit" class=" material-icons Btn1" name="Editar" >edit</i>',['class'=>'btn btn-info Btn1','type'=>'button','id'=>'crear']) }}
-       {{ FORM::button('<i  name="bdelete" class=" material-icons Btn2" name="Desactivar" >block</i>',['class'=>'btn btn-danger Btn2','type'=>'button','id' => 'delete']) }}
-    </td>
-     @csrf
-  </tr>
-  @endforeach
-  </tbody>
-</table>
-</div>
-<script type="text/javascript">
-  
+  $( document ).ready(function() {
     $("tbody input, tbody select, button#curriculum").attr('disabled',true);
     $("thead input, thead select").attr('class','form-control');
     $("#new").hide();
@@ -189,6 +92,7 @@ else //cancel
 }
 
     });
+  });
 
  
 
@@ -215,6 +119,9 @@ $("button[name='add']").attr('disabled',false);
 $("td[name='pass'], th[name='pass']").hide();
     $("td[name='state'], th[name='state']").show();
 }
+function Menu(){ 
+var name=document.getElementById('PageN').name;
+       document.getElementById(name).className+="active";
+   
+}
 
-</script>
-@stop

@@ -6,12 +6,11 @@
 {!!Html::style('vendor/css/styles.min.css')!!}
 {!!Html::script('vendor/js/jquery.js')!!}
 
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
-<script type="text/javascript" src="{{URL::asset('vendor/js/cruds.js')}}"></script>
-
-
-
+      <script type="text/javascript" src="{{URL::asset('vendor/js/cruds.js')}}"></script>
 <body onload="Menu();">  
   <div class="navbar">
       <div class="container">

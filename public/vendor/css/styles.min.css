@@ -86,42 +86,6 @@ height: 100%;
 {
 
 }
-
-/*
-.btn{
-background: #00CCCC;
-border-radius: 15px;
-padding: 2%;
-font-size:18px;
-width: 70%;
-color:#fff;
-}
-.btns{
-position: relative;
-background: #00CCCC;
-border: none;
-border-radius: 15px;
-padding: 11px;
-margin-left: 10px;
-opacity: none;
-width: 70%;
-color:#fff;
-}
-.btnf{
-align-content: center;
-text-align: center;
-position: absolute;
-background: #00CCCC;
-border: none;
-border-radius: 15px;
-padding: 11px;
-opacity: none;
-width: 10%;
-color:#fff;
-right: 0px;
-bottom: -70px;
-}*/
-
 /*------------------------C-----------------------------*/
 .copyright {
   text-align:center;
@@ -178,14 +142,6 @@ margin-top: 90px;
 height: 520px;
 }
 
- tbody tr
-{
-border-bottom: 1px solid white;
-}/*
- tbody tr:hover  > td
-{
-    background:var(--color3); 
-}/*/
 .container /* nav*/
 {
   width: 350px;
@@ -207,6 +163,7 @@ border-bottom: 1px solid white;
   width: 100%;
   height:80%;
 }
+
 #docsleft
 {
 position: absolute;
@@ -227,18 +184,41 @@ width:300px;
 height:100px;
 }
 /*------------------------E-----------------------------*/
-/*.estate{
-  position: absolute;
+.state{
   width: 50%;
+  position: absolute;
   height: content;
-  z-index: 10;
-  top:0px;
-  right:40px;
+  right: 35px;
+
 }
+.state td
+{
+  padding: 0px 5px;
+}
+.state input:disabled{
+ 
+    border-radius: 25px;
+     color: #000;
+}
+button[name=estado_sol]
+{
+  border-style:none;
+}
+button[name=estado_sol]:hover
+{
+ color: yellow;
+  background-color: transparent;
+}
+td [name=description]
+{
+  width: 50%;
+}
+/*
 #espec
 {
   width: 50%;
   position: relative;
+
   top: 20px;
 }
 */
@@ -289,16 +269,16 @@ top: 10px;
 .fixed_headers th,
 .fixed_headers td {
   padding: 5px;
-  text-align: left;
-}
-.fixed_headers th{
   text-align: center;
 }
+
 .fixed_headers td[name~=clave],
-.fixed_headers th[name~=clave] {
-  min-width: 100px;
-   max-width: 100px;
-     text-align: center;
+.fixed_headers th[name~=clave],
+.fixed_headers td[name~=claveT],
+.fixed_headers th[name~=claveT]{
+  min-width: 70px;
+   max-width: 90px;
+   
 }
 .fixed_headers td[name~=name],
 .fixed_headers th[name~=name] {
@@ -307,7 +287,7 @@ top: 10px;
 }
 .fixed_headers td[name~=academia],
 .fixed_headers th[name~=academia] {
-  min-width: 250px;
+  min-width: 100px;
   max-width: 250px;
 }
 
@@ -318,45 +298,41 @@ top: 10px;
 .fixed_headers td[name~=periodo],
 .fixed_headers th[name~=periodo] {
   min-width: 20px;
-  min-width: 80px;
-  text-align: center;
+  max-width: 80px;
 }
 .fixed_headers td[name~=group-ua],
 .fixed_headers th[name~=group-ua] {
-    min-width: 220px;
+    min-width: 240px;
 
 }
 .fixed_headers td[name~=email],
 .fixed_headers th[name~=email] {
-    max-width: 250px;
+    max-width: 80px;
     min-width: 250px;
 
 }
 .fixed_headers td[name~=date],
 .fixed_headers th[name~=date] {
-    max-width: 190px;
-    min-width: 190px;
+    max-width: 150px;
+    min-width: 80px;
 }
 .fixed_headers td[name~=state],
 .fixed_headers th[name~=state]
 {
-    max-width: 150px;
-    min-width: 150px;
-    text-align: center;
+    max-width: 60px;
+    min-width: 60px;
 }
 .fixed_headers td[name~=pass],
 .fixed_headers th[name~=pass]
 {
     max-width: 100px;
     min-width: 100px;
-      text-align: center;
 }
 .fixed_headers td[name~=actions],
 .fixed_headers th[name~=actions]
 {
     max-width: 200px;
-    min-width: 200px;
-          text-align: center;
+    min-width: 50px;
 }
 .fixed_headers td[name~=ua],
 .fixed_headers th[name~=ua]
@@ -365,6 +341,7 @@ top: 10px;
     min-width: 150px;
 
 }
+
 
 /*
 #ficha_proyect
@@ -410,6 +387,20 @@ i{color:white;}
 #curriculum:disabled{
 visibility: hidden;
 }
+button[name='Iadd'],button[name='Aadd']
+{
+ 
+}
+
+
+.dinamic  input[name='boleta']
+{
+  width: 100px;
+}
+.dinamic input[name='name']
+{
+  width: 350px;
+}
 /*------------------------J-----------------------------*/
 /*------------------------K-----------------------------*/
 /*------------------------L-----------------------------*/
@@ -417,6 +408,7 @@ visibility: hidden;
 {
   color:#000;
 }
+
 .logOut
 {
   text-align: center;
@@ -522,6 +514,24 @@ top: 0;
 
 /*------------------------O-----------------------------*/
 /*------------------------P-----------------------------*/
+#project
+{
+  width: 98%;
+  margin: 0 auto;
+}
+
+#project td[name=integrantes]
+{
+  width: 50%;
+}
+#project input[name=email]
+{
+  width: 200px;
+}
+#project th, #project td {
+  padding:5px;
+}
+
 /*
 .perfil-layout-content .login-cont
 {
@@ -532,6 +542,7 @@ top: 0;
 }
 #proyecto_x
 {
+
 max-height: 370px;
 overflow-y: scroll;
 }*/
@@ -566,7 +577,8 @@ overflow-y: scroll;
     min-width: 250px;
     max-width: 250px;
     min-height: 100%;
-  /*  position: absolute;*/
+ /*  position: absolute;
+   z-index: 15;*/
 }
 #sidebar {
     background-color: var(--color4);
@@ -581,6 +593,11 @@ overflow-y: scroll;
 #sidebarCollapse
 {
 position: absolute;
+
+/*background-color: transparent;
+top: 5px;
+z-index: 15;
+padding: 10px;*/
 }
 
 #sidebar ul li.active>a,
@@ -610,14 +627,19 @@ a[data-toggle="collapse"] {
     border: none;
      color: #000;
 }
+ .ToText select:disabled,.ToText input:disabled {
+   appearance: none;
+   background-color: transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none; 
+    border: none;
+     color: #000;
+}
 button[name="curriculum"]::disabled
 {
   visibility: hidden;
 }
-input[name="clave"],input[name="periodo"]
-{
-  width: 100px;
-}
+
 /*------------------------T-----------------------------*/
 .title{
   background:var(--color2);
@@ -639,7 +661,8 @@ input[name="clave"],input[name="periodo"]
   size: 18px;
   border-radius:25px;
   top:-25px;
-  left: 50px;
+ float: left;
+ left: 50px;
   text-align: center;
   height: content;
   width:300px;
@@ -656,9 +679,10 @@ td
 }
 
 #table-crud{
-width: 100%;
-    height:92%;
+max-width: 100%;
+    height:85%;
 }
+
 
 #terms
 {
@@ -675,6 +699,11 @@ top:0;
   height:80%;
   width: 90%;
 }
+.tdinamic
+{
+  height:30%;
+}
+
 /*------------------------U-----------------------------*/
 .user-name{
   background:#00CCCC;
@@ -703,3 +732,16 @@ top:0;
 /*------------------------X-----------------------------*/
 /*------------------------Y-----------------------------*/
 /*------------------------Z-----------------------------*/
+
+.integrantes1 > td
+{
+  width: 100%;
+}
+#card_project
+{
+  margin: 0 auto;
+  padding-top: 30px;
+  width: 95%;
+  height: 90%;
+
+}

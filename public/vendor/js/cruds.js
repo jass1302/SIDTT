@@ -1,5 +1,5 @@
 function actualizar(){
-	alert("actualizar");
+	//alert("actualizar");
 	var vid = $("#idU").val();
     var route = "../../administrador/unidades/"+vid;
 	var varUAP = $("#uap").val();

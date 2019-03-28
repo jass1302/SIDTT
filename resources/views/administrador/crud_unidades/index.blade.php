@@ -7,6 +7,8 @@
   </div>
   @endif
   <input id="PageN" type="hidden" name="Unidades">
+  <input id="Ptype" type="hidden" name="crud_unidades">
+
   <div class="title-l"> 
   <h7>Unidades</h7>
 </div>
@@ -16,31 +18,29 @@
            <table class="table table-hover fixed_headers ">
     <thead>
 <tr>
-   <th  title="clave"  >
+   <th  name="clave"  >
     {!!Form::label('Código')!!}
    </th>
-   <th  title="ua"  >
+   <th  name="ua"  >
          {!!Form::label('Unidad de Aprendizaje')!!} 
 </th>
-      <th  title="group" >{!!Form::label('Grupo')!!} </th>
+      <th  name="group" >{!!Form::label('Grupo')!!} </th>
       
-      <th  title="name" >
+      <th  name="name" >
          {!!Form::label('Docente')!!}
   </th>
-  <th  title="periodo" >
+  <th  name="periodo" >
          {!!Form::label('Periodo')!!}
   </th>
     
-    <th  title="date" >
-         {!!Form::label('Inicio')!!}
+    <th  name="date" >
+         {!!Form::label('Fecha')!!}
   </th>
-   <th  title="date" >
-         {!!Form::label('Fin')!!}
-  </th>
-  <th  title="state" >
+
+  <th  name="state" >
          {!!Form::label('Estado')!!}
   </th>
-  <th title="actions" > 
+  <th name="actions" > 
     {!!Form::label('Acciones')!!}
   </th>
 
@@ -54,7 +54,7 @@
  <td name="ua" >{!!Form::select('unidad',$unid,null,['id'=>'nuap'])!!}
     </td>
     <td name="group"  class="editeable"> {!!Form::text('group',null,['id'=>'ngrupo'])!!} </td>
-    <td  title="name"  > 
+    <td  name="name"  > 
     <div class="input-group">
    {!!Form::select('d_titular',$docentes,null,['id'=>'ndocente'])!!}
 
@@ -67,18 +67,19 @@
    <td name="periodo"  class="editeable"> 
     {!!Form::text('periodo',null,['id'=>'nperiodo'])!!}
    </td>
-    <td  title="date">
-      {!!Form::date('fecha_in',null,['id'=>'ninicio'])!!}
-  
-    </td>
-    <td  title="date">
-       {!!Form::date('fecha_fin',null,['id'=>'nfin'])!!}
-     <td title="state" >
+    <td  name="date">
+                {!!Form::date('fecha_in',null,['id'=>'ninicio'])!!}
+           {!!Form::date('fecha_fin',null,['id'=>'nfin'])!!}
+  </div>
+</div>  
+
+     </td>
+     <td name="state" >
 
 </td>
 <td  name="actions">
-       {{ FORM::button('<i  name="bedit" class=" material-icons" title="Editar" >save</i>',['class'=>'btn btn-info Btn1','type'=>'button','id'=>'crear']) }}
-       {{ FORM::button('<i  name="bdelete" class=" material-icons" title="Desactivar" >close</i>',['class'=>'btn btn-danger Btn2','type'=>'button','id' => 'delete']) }}
+       {{ FORM::button('<i  name="bedit" class=" material-icons" name="Editar" >save</i>',['class'=>'btn btn-info Btn1','type'=>'button','id'=>'crear']) }}
+       {{ FORM::button('<i  name="bdelete" class=" material-icons" name="Desactivar" >close</i>',['class'=>'btn btn-danger Btn2','type'=>'button','id' => 'delete']) }}
   </tr>
   {!! Form::close() !!}
 </thead>
@@ -97,19 +98,18 @@
     <td name="group"  class="editeable"> {!!Form::text('group',$u->grupo,['id' => 'grupo'])!!}</td>
     <td  name="name"  > 
     <div class="input-group">
-   {!!Form::select('d_titular',$docentes, $u->d_titular,['id' => 'docente'])!!}
+   {!!Form::select('d_titular',$docentes,$u->dtitular,['id' => 'docente'])!!}
   <div class="input-group-append">
     <button id="curriculum" class="btn btn-outline-secondary material-icons" type="button" name="curriculum" >assignment_ind</button>
   </div>
 </div>  
     </td>
    <td  name="periodo" class="editeable">{!!Form::text('periodo',$u->periodo,['id' => 'periodo'])!!}</td>
-    <td  title="date">
+    <td  name="date">
       {!!Form::date('fecha_in',\Carbon\Carbon::parse($u->fecha_ini)->format('Y-m-d'),['id' => 'inicio'])!!}
-    </td>
-    <td  title="date">
        {!!Form::date('fecha_fin',\Carbon\Carbon::parse($u->fecha_fn)->format('Y-m-d'),['id' => 'fin'])!!}
-     <td title="state" >
+     </td>
+     <td name="state" >
   @if($u->deleted_at == null)
   <label>Activo</label>
   @else
@@ -155,6 +155,7 @@ if ( $("tr#"+btnId+" td[name='clave']").attr('contentEditable')=="false") //Edit
 
 bloqueo(btnId);
 
+
 $("button[name='add']").attr('disabled',true);
     $( "tr#"+btnId+" i[name='bedit']" ).html( 'save' );
     $( "tr#"+btnId+" i[name='bdelete']" ).html( 'close' );
@@ -170,6 +171,7 @@ $("button[name='add']").attr('disabled',true);
 }
 else //Guardar
 {
+
   if(btnId!="new"){
   $("tr#"+btnId+" td[name='clave']").attr('contentEditable',false);
     $( "tr#"+btnId+" i[name='bedit']" ).html( 'edit' );

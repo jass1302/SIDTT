@@ -1,43 +1,59 @@
 @extends('layouts.principal')
 @section('content')
+<div class="wrapper">
+ <nav id="sidebar">
+    <div class="sidebar-header">
+      <div class="user-name">
+    <h7 >Asesor</h7> <!--Max 21 caracteres-->
+      </div>
+    </div>
 
-<div class="pefilContenedor">
+<ul id="panel" class="list-group list-group-horizontal">                 
+                <li class="list-group-item "><a href="/logout" class=" material-icons" title="Cerrar Sesión"  >exit_to_app</a></li>
+                <li class="list-group-item " ><a href="" class="material-icons " title="Calendario"  >calendar_today</a></li>
+                <li class="list-group-item " ><a href="" class="material-icons " title="Notificaciones"  >notifications</a></li>
+</ul>
+<ul id="menuNav" class="list-unstyled components">
+    <li>
+        <a href="alumno" class="list-group-item  " id="Home" >Home </a>
+    </li>
+    <li>
+        <a href="proyecto" class="list-group-item  " id="Currículo" >Currículo</a>
+    </li>
+    <li>
+        <a href="#Submenu" data-toggle="collapse" aria-expanded="false" class=" list-group-item" id="Unidades">Proyectos</a>
+                    <ul class="collapse list-unstyled" id="Submenu">
+                        <li>
+                            <a href="#" class="list-group-item sub" name="Proyectos">Proyecto</a>
+                        </li>
+                
+                        <li>
+                            <a href="#" class="list-group-item sub" name="Documentos">Documentos</a>
+                        </li>
+                        <li>
+                            <a href="#" class="list-group-item sub" name="Evaluación">Evaluación</a>
+                        </li>
+                    </ul>
+</li>
 
-<div class="perfil-layout-leftbar-back">
-	<div class="user-name"> 
-	<h7>{!!Auth::user()->nombre!!}</h7>
-</div>
-<div class="perfil-layout-leftbar">
-<ul class="list-group">
-	
-<a href="" class="list-group-item  " id="home" >HOME 
-			<!--EXPONES NOTIFICACIONES<span class="badge">12</span>--> </a>
-<a href="" class="list-group-item  "  id="curriculo" >Currículo </a>
 
-<a href="pro_ase" class="list-group-item" id="proyectos">Proyectos</a>
-<div id="proyecto_auto" >
-	 <ul class="list-group-item" id="auto" >
-<a href="pro_ase_vi" class="list-group-item-auto"  id="proyectoc">Proyecto</a>
-<a href="ase_docs" class="list-group-item-auto" id="documentos">Documentos</a>
-<a href="ase_eva" class="list-group-item-auto" id="evaluacion">Evaluación</a>
 </ul>
 
-</div>
-<a href="" class="list-group-item  " id="calendario" >Calendario</a>
-<a href="/logout" class="list-group-item material-icons"  >exit_to_app</a>
-</ul>
-</div>
-</div>
-  
+</nav>
 
-<div class="perfil-layout-content">
+<div id="content">
+<button type="button" id="sidebarCollapse" class="btn">
+<a id="menu" class=" material-icons" title="Cerrar">close</a>
+</button>         
+<div id="container">          
+<div class="box">
+@yield('contenido-perfil')
+</div>
+</div> 
+</div>
 
- <div class="login-cont"></div>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" ></script>
  
-  <div class="cont-text">
-	@yield('contenido-perfil')
-</div>
-	
-</div>
 </div>
 @stop

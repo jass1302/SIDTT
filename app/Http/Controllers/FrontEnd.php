@@ -5,14 +5,14 @@ use Illuminate\Http\Request;
 
 class FrontEnd extends Controller
 {
-	public function __construct(){
+	/*public function __construct(){
 		$this->middleware('auth',['except' => 'index']);
 		$this->middleware('admin',['only' => 'administrador']);
 		$this->middleware('al',['only' => 'alumno']);
 		$this->middleware('asesor',['only' => 'asesor']);
 		$this->middleware('docente',['only' => 'docente']);
 		$this->middleware('homepage',['only' => 'index']);
-	}
+	}*/
 	public function index(){ 
 		return view('index');  
 	}

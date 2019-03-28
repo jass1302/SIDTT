@@ -40,6 +40,9 @@ route::get('logout','loginControll@logout');
 route::get('documentos',function(){
 	return view('forms.documentos');
 });
+route::get('uni',function(){
+	return view('administrador.crud_unidades.index');
+});
 route::get('ase_docs',function(){
 	return view('forms.documentos_asesor');
 });

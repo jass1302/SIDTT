@@ -1,35 +1,45 @@
 @extends('layouts.principal')
 @section('content')
-<div class="pefilContenedor">
+<div class="wrapper">
+ <nav id="sidebar">
+    <div class="sidebar-header">
+      <div class="user-name">
+    <h7 >Alumno</h7> <!--Max 21 caracteres-->
+      </div>
+    </div>
 
-<div class="perfil-layout-leftbar-back">
-	<div class="user-name"> 
-	<h7>{!!Auth::user()->nombre!!}</h7>
-</div>
-<div class="perfil-layout-leftbar">
-
-<ul class="list-group">
-	
-<a href="" class="list-group-item  " id="home" >HOME 
-			<!--EXPONES NOTIFICACIONES<span class="badge">12</span>--> </a>
-<a href="" class="list-group-item  " id="proyecto" >Proyecto </a>
-	
-<a href="" class="list-group-item " id="documentos" >Documentos</a>
-
-<a href="" class="list-group-item  " id="calendario" >Calendario</a>
-<a href="" class="list-group-item  " id="evaluacion" >Evaluación</a>
-<a href="/logout" class="list-group-item material-icons"  title="Cerrar Sesión" >exit_to_app</a>
+<ul id="panel" class="list-group list-group-horizontal">                 
+                <li class="list-group-item "><a href="/logout" class=" material-icons" title="Cerrar Sesión"  >exit_to_app</a></li>
+                <li class="list-group-item " ><a href="" class="material-icons " title="Calendario"  >calendar_today</a></li>
+                <li class="list-group-item " ><a href="" class="material-icons " title="Notificaciones"  >notifications</a></li>
 </ul>
-</div>
-</div>
-<div class="perfil-layout-content">
+<ul id="menuNav" class="list-unstyled components">
+    <li>
+        <a href="alumno" class="list-group-item  " id="Home" >Home </a>
+    </li>
+    <li>
+        <a href="proyecto" class="list-group-item  " id="Proyecto" >Proyecto</a>
+    </li>
+    <li>
+        <a href="docs_alu" class="list-group-item  " id="Documentos" >Documentos</a>
+    </li>
+    <li>
+        <a href="eva_alu" class="list-group-item  " id="Evaluacion">Evaluación</a>
+    </li>
 
- <div class="login-cont"></div>
- 
-  <div class="cont-text">
-	@yield('contenido-perfil')
+</ul>
+
+</nav>
+
+<div id="content">
+<button type="button" id="sidebarCollapse" class="btn">
+<a id="menu" class=" material-icons" title="Cerrar">close</a>
+</button>         
+<div id="container">          
+<div class="box">
+@yield('contenido-perfil')
 </div>
-	
+</div> 
 </div>
 </div>
 @stop
