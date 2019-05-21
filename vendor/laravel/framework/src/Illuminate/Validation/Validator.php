@@ -1,7 +1,6 @@
 <?php
 
 namespace Illuminate\Validation;
-
 use RuntimeException;
 use BadMethodCallException;
 use Illuminate\Support\Arr;

@@ -21,9 +21,10 @@ class ctrlAdminDocente extends Controller
      */
     public function index()
     {
-        $usuario = usuarios::withTrashed()->where('tipo','=','docente')->join('docente','usuarios.idUsuario','=','docente.idUsuario')->join('academia','academia.idAcademia','=','docente.Academia_idAcademia')->select('usuarios.*','docente.*','academia.*')->get();
+        //$usuario = usuarios::withTrashed()->where('tipo','=','docente')->join('docente','usuarios.idUsuario','=','docente.idUsuario')->join('academia','academia.idAcademia','=','docente.Academia_idAcademia')->select('usuarios.*','docente.*','academia.*')->get();
+        $usuario= \DB::select('CALL getDocenteAdmin(@Docente)');
         $academia = academia::all();
-        return view('administrador.crud_Docente.index',compact('usuario','academia'));
+       return view('administrador.crud_Docente.index',compact('usuario','academia'));
     }
 
     /**

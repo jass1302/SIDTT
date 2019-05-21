@@ -52,8 +52,8 @@
   <tr id="new">
     <td name="clave"   class="editeable"> 
       {!!Form::text('clave')!!}</td>
- <td name="ua" >{!!Form::select('unidad',$unid)!!}
-    </td>
+ <!--<td name="ua" >{!!Form::select('unidad',$unid)!!}
+    </td>-->
     <td name="group"  class="editeable"> {!!Form::text('group')!!} </td>
     <td  title="name"  > 
     <div class="input-group">
@@ -214,7 +214,7 @@ $("button[name='add']").attr('disabled',false);
 
    <tr id="{{$u->idUnidad_Aprendizaje}}">
     <td name="clave"   contentEditable="false" class="editeable"> {!!Form::text('clave')!!}</td>
- <td name="ua" >{!!Form::select('unidad',$unid, $unid[$u->tipo])!!}
+<td name="ua" >{!!Form::select('unidad',$unid, $unid[$u->tipo])!!}
     </td>
     <td name="group"  class="editeable"> {!!Form::text('group',$u->grupo)!!}</td>
     <td  name="name"  > 

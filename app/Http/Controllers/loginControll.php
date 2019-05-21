@@ -17,6 +17,8 @@ class loginControll extends Controller
 	}
     public function store(loginRequest $request)
     {
+        
+ 
     	if(Auth::attempt([
     		'email'=>$request['email'], 
     		'password'=> $request['password']
@@ -25,7 +27,8 @@ class loginControll extends Controller
     		return Redirect::to('/administrador');
     	}
     	Session::flash('message-error','El usuario o contraseña son incorrectos.');
-    	return Redirect::to('/');
+    	
+        return Redirect::to('/');
 
     }
 }

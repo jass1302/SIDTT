@@ -148,6 +148,7 @@ return [
             'academia' => 'Academia',
             'cedula' => 'Cédula',
             'project' => 'Código de Proyecto',
+    'recaptcha'=>'Please ensure that you are a human!',
 
     ],
 ];

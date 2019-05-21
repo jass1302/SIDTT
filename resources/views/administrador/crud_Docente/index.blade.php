@@ -70,7 +70,7 @@
     <td name="clave" contenteditable="false">
     {!!Form::text('clave',$doc->numerodet)!!}
     </td>
-    <td name="name" >{!!Form::text('name',$doc->nombre." ".$doc->aoe_pat." ".$doc->ape_mat)!!}</td>
+    <td name="name" >{!!Form::text('name',$doc->nombre." ".$doc->ape_pat." ".$doc->ape_mat)!!}</td>
        <td name="academia">{!!Form::text('academia',$doc->Academia)!!}</td>
     <td name="email" >
       {!!Form::email('email', $doc->email)!!}

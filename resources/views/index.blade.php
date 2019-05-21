@@ -21,14 +21,25 @@
 {!!Form::label('Contraseña:')!!}</div>
 <div class="form-group">
 {!!Form::password('password',['class'=>'form-control','placeholder'=>'Ingresa tu contraseña'])!!}</div>
-{!!Form::submit('Iniciar Sesión',['class'=>'btns'])!!}<br><br>
 
-<div class="form-group">
-<a href="registro">Registrarme</a></div>
-<div class="form-group">
-<a  href="pruebas">Olvidé mi contraseña</a>
-{!!Form::close()!!}	
+  <div class="g-recaptcha right" data-theme="light" data-sitekey="{{env('GOOGLE_RECAPTCHA_KEY')}}" style="transform:scale(0.77);-webkit-transform:scale(0.77);transform-origin:0 0;-webkit-transform-origin:0 0;">
+   	
+   </div>
+
+   <div class="form-group">
+{!!Form::submit('Iniciar Sesión',['class'=>'btns'])!!}
 </div>
+ <div class="form-group mb-2">
+    <a href="registro">Registrarme    </a> <a>|</a>
+   <a  href="recuperacion_contraseña">Olvidé mi contraseña</a>
+</div>
+ 
+  </div>
+
+
+
+{!!Form::close()!!}	
+
 
 </div>
  </div>

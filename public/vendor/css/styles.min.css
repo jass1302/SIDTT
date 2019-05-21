@@ -51,7 +51,7 @@ a.brand
   height: 100%;
   overflow: auto;
   /*background: linear-gradient(100deg, #52073d, #996883);*/
-  background-image: url("../imagenes/background.jpg"); 
+  background-image: url("../imagenes/backgrounds.jpg"); 
   background-position: center;
   background-size:cover;
   background-repeat: no-repeat;
@@ -113,7 +113,7 @@ height: 100%;
 .contlogin
 {  
   padding-top:5%;
-  height: 470px;
+  height: 480px;
   float: right;
   margin-right:  5%;
 }
@@ -744,4 +744,10 @@ top:0;
   width: 95%;
   height: 90%;
 
+}
+.right {
+float: right;
+  right: 20px;
+  width: 300px;
+  padding: 0px;
 }

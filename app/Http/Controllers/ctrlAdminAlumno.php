@@ -21,7 +21,8 @@ class ctrlAdminAlumno extends Controller
      */
     public function index()
     {   
-        $usuario = usuarios::withTrashed()->where('tipo','=','alumno')->join('alumnos','usuarios.idUsuario','=','alumnos.idUsuario')->select('usuarios.*','alumnos.*','alumnos.Unidad_Aprendizaje_idUnidad_Aprendizaje as idG')->get();
+        //$usuario = usuarios::withTrashed()->where('tipo','=','alumno')->join('alumnos','usuarios.idUsuario','=','alumnos.idUsuario')->select('usuarios.*','alumnos.*','alumnos.Unidad_Aprendizaje_idUnidad_Aprendizaje as idG')->get();
+        $usuario = \DB::select('CALL getAlumnosAdmin(@cantidad)');
         $grupo = unidades::all();
         return view('administrador.crud_alumno.index',compact('usuario','grupo'));
     }

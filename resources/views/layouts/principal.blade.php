@@ -5,6 +5,7 @@
 {!!Html::style('vendor/css/superposiciondivs.css')!!}
 {!!Html::style('vendor/css/styles.min.css')!!}
 {!!Html::script('vendor/js/jquery.js')!!}
+<script src='https://www.google.com/recaptcha/api.js'></script>
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 

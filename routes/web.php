@@ -1,6 +1,7 @@
 <?php
 
-//Enrrutamiento al index y layout de la página
+
+//Enrutamiento al index y layout de la página
 route::get('/','FrontEnd@index')->name('principal');
 route::get('administrador','FrontEnd@administrador');
 route::get('alumno','FrontEnd@alumno');
@@ -34,9 +35,15 @@ route::post('find','busquedaController@search')->name('buscando');
 route::resource('login','loginControll');
 route::get('logout','loginControll@logout');
 
+route::resource('newPass','NewPassControll');
+
+
 
 //................................................
 // Enrrutamiento temporal faltan controladores
+route::get('recuperacion_contraseña',function(){
+	return view('recup_contra');
+});
 route::get('documentos',function(){
 	return view('forms.documentos');
 });

@@ -355,6 +355,7 @@ class SessionGuard implements StatefulGuard, SupportsBasicAuth
         // fact valid we'll log the users into the application and return true.
         if ($this->hasValidCredentials($user, $credentials)) {
             $this->login($user, $remember);
+            
 
             return true;
         }

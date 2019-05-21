@@ -24,7 +24,7 @@ class loginRequest extends FormRequest
     public function rules()
     {
         return [
-            //
-        ];
+        'g-recaptcha-response'=>'required|recaptcha'
+    ];
     }
 }
