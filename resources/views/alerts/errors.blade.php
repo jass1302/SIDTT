@@ -8,6 +8,5 @@
 	
   	toastr.error("{{Session::get('message-error')}}"); 
   @endif
-
   	
 </script>

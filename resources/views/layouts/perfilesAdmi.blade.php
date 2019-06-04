@@ -15,6 +15,9 @@
     <li>
         <a href="../../administrador/alumnos" class="list-group-item " id="Alumnos" >Alumnos</a>
     </li>
+      <li>
+        <a href="../../administrador/password_change" class="list-group-item">Cambiar contraseña</a>
+    </li>
 </ul>
 
 </nav>

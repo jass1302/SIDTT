@@ -1,98 +1,72 @@
 @extends('layouts.perfiles')
-<title>Administrador - Alumno</title>
+<title>Administrador - Asesor</title>
 @section('contenido-perfil')
 
-{!!Html::style('vendor/css/superposiciondivs.css')!!}
+@include('alerts.success')
+<input id="PageN" type="hidden" name="Asesores">
 
- @if(Session::has('message'))
-  <div class="alert alert-warning alert-dismissible" role="alert">
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
-      {{Session::get('message')}}
-  </div>
-  @endif
-<!---------------Guardaros todos en un solo archivo-->
-<input id="PageN" type="hidden" name="Alumnos">
-<script type="text/javascript">
-
-function Menu(){ 
-var name=document.getElementById('PageN').name;
-       document.getElementById(name).className+="active";
-   
-}
-</script>
-<!-------------------------------------------------->
-<div class="title-l">  
-  <h7>Alumnos</h7>
+  <div class="title-l"> 
+  <h7>Asesores</h7>
 </div>
-<div class="wrapped">
-<table class="table table-hover table-responsive">
-  <thead> 
-<tr class="filters">
-<th title="clave" >
-Boleta
-                       </th >
 
-                        <th  title="name">
-                           Alumno
-                          
-                        </th>
-                        
-                        <th  title="type">
-                         Tipo
-                       </th >
-                        <th  title="group-ua" >
-                          Grupo
-                        </th >
-                        <th title="email" >
-                          Correo
-                        </th >
-                         <th  title="pass" >
-                         Password
-                        </th>
-                        <th  title="state">
-                          Estado  
-                        </th >
-                        <th title="actions"> Acciones</th>
-                    </tr>
-                </thead>
-  <tbody>
-  @foreach($usuario as $us)
+
+<div class="wrapped">
+<div id="table-scroll-x" >
+           <table class="fixed_headers">
+<thead>
+<tr>
+   <th  title="clave">
+         {!!Form::label('Cédula')!!}
+</th>
+      <th title="name">{!!Form::label('Asesor Externo')!!} </th>
+      
+    
+  <th   title="email">
+  {!!Form::label('Correo')!!}
+ 
+<th   title="pass">
+  {!!Form::label('Contaseña')!!}
+  
+</th>
+<th title="state">
+      {!!Form::label('Estado')!!}
+  </th>
+<th title="actions">
+   {!!Form::label('Acciones')!!}
+  </th>
+</tr>
+</thead>
+<tbody>
+ @foreach($asesor as $a)
 
   <tr>
-    {!!Form::open()!!}
-    <td title="clave" contenteditable="true" class="editeable">{{ $us->boleta }}</td>
-    <td title="name"contenteditable="true" class="editeable" >{{$us->nombre." ".$us->ape_pat." ".$us->ape_mat}}</td>
-   
-    <td title="type"contenteditable="true" class="editeable">A</td>
-    <td title="group-ua" contenteditable="true" class="editeable" >{{$grupo->where('idUnidadAprendizaje','=',$us->idG)->get('grupo')}}</td>
-    <td title="email" contenteditable="true" class="editeable" >{{$us->email}}</td>
-    <td title="pass" contenteditable="true" class="editeable" >x</td>
-
-     <td title="state"contenteditable="true" class="editeable" >
-      @if($us->deleted_at == null)
-      Activo
-      @else
-      Inactivo
-      @endif
-      </td>
-     <td title="actions">
-
-   <button type="button" class="btn btn-info">
-    <i id="bval" class=" material-icons" title="Editar" onclick="action();">edit</i>
-    </button>
+    <td title="clave" contenteditable="true" >
+      {{ $a->cedula }}
+    </td>
+    <td title="name" contenteditable="true" >{{$a->nombre." ".$a->aP." ".$a->aM}}</td>
     
-      <button type="button" id="delete" class="btn btn-danger">
-        <i id="bdelete" class=" material-icons" title="Eliminar" onclick="">delete</i>
-      </button> 
-
+    <td title="email" contenteditable="true" >
+      {{ $a->email }}
+    </td> 
+    <td title="pass" contenteditable="true" >
+      x
+    </td>
+    <td title="state" contenteditable="true" > Desactivado <input class='form-control-lg' name='name' type='checkbox' value='value' id='area52'>{{$a->deleted_at}} </td>
+    <td  title="actions">
+   <button type="button" class="btn btn-info">
+                          <i id="bval" class=" material-icons" title="Editar" onclick="action();">edit</i>
+                          </button>
+                            <button type="button" id="delete" class="btn btn-danger">
+                          <i id="bdelete" class=" material-icons" title="Eliminar" onclick="">delete</i>
+                          </button> 
+  
     </td>
      @csrf
-     {!!Form::close()!!}
   </tr>
   @endforeach
   </tbody>
 </table>
-        </div>
- @stop 
+</div>
+</div>
+
+@stop
